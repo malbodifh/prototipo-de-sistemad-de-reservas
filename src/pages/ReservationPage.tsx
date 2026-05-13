@@ -44,7 +44,8 @@ export default function ReservationPage() {
 
   const releaseBlock = useCallback(async () => {
     if (!tableId) return
-    await supabase.rpc('release_block', {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    await (supabase as any).rpc('release_block', {
       p_table_id: tableId,
       p_session_id: sessionId,
     })
@@ -54,7 +55,8 @@ export default function ReservationPage() {
     if (!tableId) return
 
     async function blockTable() {
-      const { data, error } = await supabase.rpc('block_table', {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data, error } = await (supabase as any).rpc('block_table', {
         p_table_id: tableId!,
         p_session_id: sessionId,
       })
@@ -102,7 +104,8 @@ export default function ReservationPage() {
 
     if (timerRef.current) clearInterval(timerRef.current)
 
-    const { data, error } = await supabase.rpc('create_reservation', {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (supabase as any).rpc('create_reservation', {
       p_table_id:    table.id,
       p_session_id:  sessionId,
       p_guest_name:  form.name,

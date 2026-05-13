@@ -48,7 +48,7 @@ export default function TablesPage() {
       .eq('date', date)
       .eq('time_slot', time)
       .neq('status', 'cancelled')
-    if (data) setReservedTableIds(new Set(data.map(r => r.table_id)))
+    if (data) setReservedTableIds(new Set((data as { table_id: string }[]).map(r => r.table_id)))
   }, [date, time])
 
   useEffect(() => {
