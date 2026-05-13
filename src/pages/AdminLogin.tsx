@@ -43,8 +43,9 @@ export default function AdminLogin() {
         <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+              <label htmlFor="admin-email" className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
               <input
+                id="admin-email"
                 type="email"
                 required
                 value={email}
@@ -55,9 +56,10 @@ export default function AdminLogin() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Contraseña</label>
+              <label htmlFor="admin-password" className="block text-sm font-medium text-gray-700 mb-1.5">Contraseña</label>
               <div className="relative">
                 <input
+                  id="admin-password"
                   type={showPass ? 'text' : 'password'}
                   required
                   value={password}
@@ -67,6 +69,7 @@ export default function AdminLogin() {
                 />
                 <button
                   type="button"
+                  aria-label={showPass ? 'Ocultar contraseña' : 'Mostrar contraseña'}
                   onClick={() => setShowPass(s => !s)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >

@@ -230,10 +230,11 @@ export default function ReservationPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+            <label htmlFor="guest-name" className="block text-sm font-medium text-gray-700 mb-1.5">
               Nombre completo
             </label>
             <input
+              id="guest-name"
               type="text"
               required
               value={form.name}
@@ -244,8 +245,9 @@ export default function ReservationPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+            <label htmlFor="guest-email" className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
             <input
+              id="guest-email"
               type="email"
               required
               value={form.email}
@@ -256,8 +258,9 @@ export default function ReservationPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">Teléfono</label>
+            <label htmlFor="guest-phone" className="block text-sm font-medium text-gray-700 mb-1.5">Teléfono</label>
             <input
+              id="guest-phone"
               type="tel"
               required
               value={form.phone}

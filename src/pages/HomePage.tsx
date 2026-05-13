@@ -78,12 +78,13 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Date */}
               <div className="relative">
-                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+                <label htmlFor="search-date" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
                   Fecha
                 </label>
                 <div className="relative">
                   <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
                   <input
+                    id="search-date"
                     type="date"
                     value={date}
                     min={today}
@@ -95,12 +96,13 @@ export default function HomePage() {
 
               {/* Time */}
               <div>
-                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+                <label htmlFor="search-time" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
                   Hora
                 </label>
                 <div className="relative">
                   <Clock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
                   <select
+                    id="search-time"
                     value={time}
                     onChange={e => setTime(e.target.value)}
                     className="w-full pl-9 pr-3 py-3 border border-gray-200 rounded-xl text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent bg-white"
@@ -116,12 +118,13 @@ export default function HomePage() {
 
               {/* Guests */}
               <div>
-                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+                <label htmlFor="search-guests" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
                   Personas
                 </label>
                 <div className="relative">
                   <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
                   <select
+                    id="search-guests"
                     value={guests}
                     onChange={e => setGuests(Number(e.target.value))}
                     className="w-full pl-9 pr-3 py-3 border border-gray-200 rounded-xl text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent bg-white"
