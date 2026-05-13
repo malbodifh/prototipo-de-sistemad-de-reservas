@@ -319,7 +319,7 @@ function ReservationsList({ reservations, onCancel }: ReservationsListProps) {
                 </span>
                 {r.table && (
                   <span className="flex items-center gap-1">
-                    🍽 {(r.table as unknown as Table).name} · {(r.table as unknown as Table).zone}
+                    <UtensilsCrossed className="w-3.5 h-3.5" /> {(r.table as unknown as Table).name} · {(r.table as unknown as Table).zone}
                   </span>
                 )}
                 <span className="font-mono bg-gray-100 px-2 py-0.5 rounded text-gray-600">

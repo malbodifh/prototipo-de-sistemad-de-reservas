@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Search, Calendar, Clock, Users, ChevronRight, Star, MapPin } from 'lucide-react'
+import { Search, Calendar, Clock, Users, ChevronRight, Star, MapPin, CheckCircle, Lock, Smartphone } from 'lucide-react'
 import { TIME_SLOTS } from '../lib/constants'
 import { format, addDays } from 'date-fns'
 import { es } from 'date-fns/locale'
@@ -157,17 +157,17 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              icon: '⚡',
+              icon: <CheckCircle className="w-10 h-10 text-brand-500" />,
               title: 'Confirmación instantánea',
               desc: 'Recibe tu código de reserva en segundos, sin esperas ni llamadas.',
             },
             {
-              icon: '🔒',
+              icon: <Lock className="w-10 h-10 text-brand-500" />,
               title: 'Mesa reservada para ti',
               desc: 'Al seleccionar una mesa se bloquea 3 minutos mientras completas tu reserva.',
             },
             {
-              icon: '📱',
+              icon: <Smartphone className="w-10 h-10 text-brand-500" />,
               title: 'Gestiona fácilmente',
               desc: 'Consulta, modifica o cancela tu reserva con tu código de confirmación.',
             },
@@ -176,7 +176,7 @@ export default function HomePage() {
               key={f.title}
               className="bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="text-4xl mb-4">{f.icon}</div>
+              <div className="mb-4">{f.icon}</div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.title}</h3>
               <p className="text-gray-500 leading-relaxed">{f.desc}</p>
             </div>
