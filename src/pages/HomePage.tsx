@@ -31,13 +31,16 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-[620px] flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80')",
+            background: 'linear-gradient(135deg, #1c0900 0%, #3d1a00 20%, #2a1200 45%, #1c0900 70%, #0f0500 100%)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: 'radial-gradient(ellipse at 20% 50%, #c4821e33 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, #92400e22 0%, transparent 50%)',
+          }}
+        />
 
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
           <p className="text-brand-300 font-semibold tracking-widest text-sm uppercase mb-4">
